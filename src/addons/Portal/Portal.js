@@ -311,7 +311,7 @@ class Portal extends Component {
     // React wipes the entire event object and suggests using e.persist() if
     // you need the event for async access. However, even with e.persist
     // certain required props (e.g. currentTarget) are null so we're forced to clone.
-    const eventClone = { ...e }
+    const eventClone = { ...e, currentTarget: e.currentTarget }
     return setTimeout(() => this.open(eventClone), delay || 0)
   }
 
